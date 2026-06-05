@@ -45,7 +45,7 @@ const initialObjects: SpaceObject[] = [
     },
 ];
 
-function App(){
+function App() {
     const [objects, setObjects] = useState<SpaceObject[]>(initialObjects);
     const [selectedObject, setSelectedObject] = useState<SpaceObject | null>(null);
 
