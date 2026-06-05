@@ -1,0 +1,9 @@
+mozliwe błędy w kodzie:
+- nie wyświetla się zdjecie dodanego objektu, coś z URL
+- znaleść poprawne URL do zdjęć (Syriusz,Andromeda,Betelgeza) bo są na stronie od pocżątku, ale nie działają
+- mozliwe poprawki w stylu
+- pomyśleć czy potrzebne funkcję usuwania obiektu i funkcję edycji obiektu (czy napewno to jest ważne?)
+- dodac komunikat o dodaniu obiektu do listy, np. alert("Obiekt został dodany do listy!")
+- dodac komunikat że URL nie mże być pusty, np. alert("URL nie może być pusty!")
+- pomyśleć nad komunikatem że nazwa obiektu nie może być pusta, np. alert("Nazwa obiektu nie może być pusta!")
+
