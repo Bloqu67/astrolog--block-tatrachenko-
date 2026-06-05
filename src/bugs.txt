@@ -6,5 +6,5 @@ mozliwe błędy w kodzie:
 - dodac komunikat o dodaniu obiektu do listy, np. alert("Obiekt został dodany do listy!")
 - dodac komunikat że URL nie mże być pusty, np. alert("URL nie może być pusty!")
 - pomyśleć nad komunikatem że nazwa obiektu nie może być pusta, np. alert("Nazwa obiektu nie może być pusta!")
-
 - poprawić funkcję dodawania obiektu, żeby nie dodawała pustych obiektów do listy
+-
