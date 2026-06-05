@@ -49,6 +49,10 @@ function App() {
     const [objects, setObjects] = useState<SpaceObject[]>(initialObjects);
     const [selectedObject, setSelectedObject] = useState<SpaceObject | null>(null);
 
+    function addObject(newObject: SpaceObject) {
+        setObjects((prev) => [...prev, newObject]);
+    }
+
     return (
         <div className="app">
             <h1>🌌 AstroLog</h1>
@@ -61,10 +65,7 @@ function App() {
 
                 <ObjectDetails object={selectedObject} />
 
-                <DiscoveryForm
-                    objects={objects}
-                    setObjects={setObjects}
-                />
+                <DiscoveryForm onAddObject={addObject} />
             </div>
         </div>
     );

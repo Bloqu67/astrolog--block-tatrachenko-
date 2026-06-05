@@ -2,11 +2,10 @@ import { useState } from "react";
 import type { SpaceObject } from "../Types";
 
 type Props = {
-    objects: SpaceObject[];
-    setObjects: React.Dispatch<React.SetStateAction<SpaceObject[]>>;
+    onAddObject: (obj: SpaceObject) => void;
 };
 
-export default function DiscoveryForm({ objects, setObjects }: Props) {
+export default function DiscoveryForm({ onAddObject }: Props) {
     const [name, setName] = useState("");
     const [type, setType] = useState("");
     const [distance, setDistance] = useState("");
@@ -25,9 +24,10 @@ export default function DiscoveryForm({ objects, setObjects }: Props) {
             image,
         };
 
-        setObjects([...objects, newObject]);
+        // 🔥 WYSYŁAMY DO RODZICA
+        onAddObject(newObject);
 
-        // reset formularza
+        // reset
         setName("");
         setType("");
         setDistance("");
@@ -45,7 +45,7 @@ export default function DiscoveryForm({ objects, setObjects }: Props) {
             />
 
             <input
-                placeholder="Typ (np. Planeta)"
+                placeholder="Typ"
                 value={type}
                 onChange={(e) => setType(e.target.value)}
             />

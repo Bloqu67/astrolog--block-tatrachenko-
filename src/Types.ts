@@ -1,7 +1,7 @@
 export type SpaceObject = {
     id: number;
     name: string;
-    type: "Planeta" | "Gwiazda" | "Galaktyka" | "Inne";
+    type: string;
     distance: string;
     image: string;
 };

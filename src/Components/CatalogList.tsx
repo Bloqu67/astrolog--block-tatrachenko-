@@ -2,32 +2,28 @@ import type { SpaceObject } from "../Types";
 
 type Props = {
     objects: SpaceObject[];
-    onSelect: (object: SpaceObject) => void;
+    onSelect: (obj: SpaceObject) => void;
 };
 
-function CatalogList({ objects, onSelect }: Props) {
+export default function CatalogList({ objects, onSelect }: Props) {
     return (
-        <aside className="catalog">
-            <h2>Katalog obiektów</h2>
+        <div className="catalog">
+            <h2>🌌 Catalog obiektów</h2>
 
-            {/* ZADANIE 4 – renderowanie listy przez .map() */}
-            {objects.map((object) => (
+            {objects.map((obj) => (
                 <div
-                    key={object.id}
+                    key={obj.id}
                     className="catalog-item"
-                    onClick={() => onSelect(object)}
+                    onClick={() => onSelect(obj)}
                 >
-                    <img
-                        src={object.image}
-                        alt={object.name}
-                        className="catalog-image"
-                    />
+                    <img src={obj.image} alt={obj.name} />
 
-                    <p>{object.name}</p>
+                    <div>
+                        <strong>{obj.name}</strong>
+                        <p>{obj.type}</p>
+                    </div>
                 </div>
             ))}
-        </aside>
+        </div>
     );
 }
-
-export default CatalogList;

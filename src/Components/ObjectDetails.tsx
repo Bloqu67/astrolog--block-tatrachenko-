@@ -4,29 +4,29 @@ type Props = {
     object: SpaceObject | null;
 };
 
-function ObjectDetails({ object }: Props) {
+export default function ObjectDetails({ object }: Props) {
+    if (!object) {
+        return (
+            <div className="details">
+                <h2>🌠 Wybierz obiekt</h2>
+                <p>Kliknij element z katalogu, aby zobaczyć szczegóły.</p>
+            </div>
+        );
+    }
+
     return (
-        <aside className="details">
-            <h2>Szczegóły obiektu</h2>
+        <div className="details">
+            <h2>✨ {object.name}</h2>
 
-            {/* ZADANIE 5 – renderowanie warunkowe */}
-            {!object ? (
-                <p>👉 Wybierz obiekt z katalogu</p>
-            ) : (
-                <div>
-                    <img
-                        src={object.image}
-                        alt={object.name}
-                        className="details-image"
-                    />
+            <p>
+                <strong>Typ:</strong> {object.type}
+            </p>
 
-                    <h3>{object.name}</h3>
-                    <p>Typ: {object.type}</p>
-                    <p>Odległość: {object.distance}</p>
-                </div>
-            )}
-        </aside>
+            <p>
+                <strong>Odległość:</strong> {object.distance}
+            </p>
+
+            <img src={object.image} alt={object.name} />
+        </div>
     );
 }
-
-export default ObjectDetails;

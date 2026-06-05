@@ -1,44 +1,202 @@
-.app {
-    font-family: Arial;
-    background: #0b0b0b;
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, system-ui, Arial, sans-serif;
+    background: radial-gradient(circle at top, #0b1020, #05060a 70%);
     color: white;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
+/* =========================
+   MAIN APP WRAPPER
+========================= */
+.app {
+    padding: 40px;
+    animation: fadeIn 1s ease-out;
+}
+
+h1 {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(120, 200, 255, 0.4);
+}
+
+/* =========================
+   LAYOUT GRID (CORE)
+========================= */
 .layout {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 25px;
+    align-items: start;
 }
 
-.catalog, .details, .form {
-    background: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
-    flex: 1;
+/* responsive */
+@media (max-width: 1000px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   GLASS CARD BASE
+========================= */
+.card,
+form,
+.catalog,
+.details {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover,
+form:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   CATALOG LIST
+========================= */
+.catalog {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 75vh;
+    overflow-y: auto;
 }
 
 .catalog-item {
     display: flex;
-    gap: 10px;
     align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    padding: 8px;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .catalog-item:hover {
-    background: #2a2a2a;
+    background: rgba(120, 200, 255, 0.12);
+    transform: scale(1.02);
 }
 
-.catalog-image {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.details-image {
-    width: 100%;
-    max-width: 300px;
+.catalog-item img {
+    width: 45px;
+    height: 45px;
     border-radius: 10px;
+    object-fit: cover;
+}
+
+/* =========================
+   DETAILS PANEL
+========================= */
+.details img {
+    width: 100%;
+    border-radius: 14px;
+    margin-top: 10px;
+    animation: zoomIn 0.5s ease;
+}
+
+.details h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.details p {
+    opacity: 0.8;
+    margin: 6px 0;
+}
+
+/* =========================
+   FORM STYLING
+========================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    border-color: rgba(120, 200, 255, 0.6);
+    box-shadow: 0 0 15px rgba(120, 200, 255, 0.2);
+}
+
+button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: black;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 242, 254, 0.3);
+}
+
+/* =========================
+   SCROLLBAR (nice detail)
+========================= */
+.catalog::-webkit-scrollbar {
+    width: 6px;
+}
+
+.catalog::-webkit-scrollbar-thumb {
+    background: rgba(120, 200, 255, 0.4);
+    border-radius: 10px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
