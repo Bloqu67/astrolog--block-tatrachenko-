@@ -1,18 +1,16 @@
 import type { SpaceObject } from "../Types";
 
-type CatalogListProps = {
+type Props = {
     objects: SpaceObject[];
     onSelect: (object: SpaceObject) => void;
 };
 
-function CatalogList({
-                         objects,
-                         onSelect,
-                     }: CatalogListProps) {
+function CatalogList({ objects, onSelect }: Props) {
     return (
         <aside className="catalog">
             <h2>Katalog obiektów</h2>
 
+            {/* ZADANIE 4 – renderowanie listy przez .map() */}
             {objects.map((object) => (
                 <div
                     key={object.id}

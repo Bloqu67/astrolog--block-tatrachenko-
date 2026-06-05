@@ -1,20 +1,18 @@
 import type { SpaceObject } from "../Types";
 
-type DiscoveryFormProps = {
+type Props = {
     objects: SpaceObject[];
     setObjects: React.Dispatch<React.SetStateAction<SpaceObject[]>>;
 };
 
-function DiscoveryForm({
-                           objects,
-                           setObjects,
-                       }: DiscoveryFormProps) {
-    console.log(objects, setObjects);
-
+function DiscoveryForm({ objects, setObjects }: Props) {
     return (
-        <div>
-            <h2>Formularz dodawania obiektu</h2>
-        </div>
+        <aside className="form">
+            <h2>Formularz odkryć</h2>
+
+            {/* Zadanie 6–7 tutaj będzie logika formularza */}
+            <p>Formularz w kolejnych zadaniach</p>
+        </aside>
     );
 }
 

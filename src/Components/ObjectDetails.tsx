@@ -1,32 +1,31 @@
 import type { SpaceObject } from "../Types";
 
-type ObjectDetailsProps = {
+type Props = {
     object: SpaceObject | null;
 };
 
-function ObjectDetails({
-                           object,
-                       }: ObjectDetailsProps) {
+function ObjectDetails({ object }: Props) {
     return (
-        <div>
+        <aside className="details">
             <h2>Szczegóły obiektu</h2>
 
-            {object ? (
-                <>
+            {/* ZADANIE 5 – renderowanie warunkowe */}
+            {!object ? (
+                <p>👉 Wybierz obiekt z katalogu</p>
+            ) : (
+                <div>
                     <img
                         src={object.image}
                         alt={object.name}
-                        width={250}
+                        className="details-image"
                     />
 
-                    <p>Nazwa: {object.name}</p>
+                    <h3>{object.name}</h3>
                     <p>Typ: {object.type}</p>
                     <p>Odległość: {object.distance}</p>
-                </>
-            ) : (
-                <p>Wybierz obiekt z katalogu.</p>
+                </div>
             )}
-        </div>
+        </aside>
     );
 }
 

@@ -27,28 +27,25 @@ const initialObjects: SpaceObject[] = [
         name: "Syriusz",
         type: "Gwiazda",
         distance: "8,6 lat świetlnych",
-        image:
-            "",
+        image: "https://upload.wikimedia.org/wikipedia/commons/5/56/Sirius_A_and_B_Hubble_photo.jpg",
     },
     {
         id: 4,
         name: "Andromeda",
         type: "Galaktyka",
         distance: "2,5 mln lat świetlnych",
-        image:
-            "",
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Andromeda_Galaxy_%28with_h-alpha%29.jpg",
     },
     {
         id: 5,
         name: "Betelgeza",
         type: "Gwiazda",
         distance: "642 lata świetlne",
-        image:
-            "https://upload.wikimedia.org/wikipedia/commons/5/5f/Betelgeuse_star_%28Hubble%29.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/7/77/Artist%27s_impression_of_the_red_supergiant_star_Betelgeuse.jpg",
     },
 ];
 
-function App() {
+function App(): JSX.Element {
     const [objects, setObjects] = useState<SpaceObject[]>(initialObjects);
     const [selectedObject, setSelectedObject] = useState<SpaceObject | null>(null);
 
@@ -56,17 +53,19 @@ function App() {
         <div className="app">
             <h1>🌌 AstroLog</h1>
 
-            <CatalogList
-                objects={objects}
-                onSelect={setSelectedObject}
-            />
+            <div className="layout">
+                <CatalogList
+                    objects={objects}
+                    onSelect={setSelectedObject}
+                />
 
-            <ObjectDetails object={selectedObject} />
+                <ObjectDetails object={selectedObject} />
 
-            <DiscoveryForm
-                objects={objects}
-                setObjects={setObjects}
-            />
+                <DiscoveryForm
+                    objects={objects}
+                    setObjects={setObjects}
+                />
+            </div>
         </div>
     );
 }
