@@ -8,3 +8,23 @@ mozliwe błędy w kodzie:
 - pomyśleć nad komunikatem że nazwa obiektu nie może być pusta, np. alert("Nazwa obiektu nie może być pusta!")
 - poprawić funkcję dodawania obiektu, żeby nie dodawała pustych obiektów do listy
 -
+
+Księżyc
+Satelita naturalny
+384 400 km
+https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg
+
+Neptun
+Planeta
+4,5 mld km
+https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg
+
+Saturn
+Planeta
+1,4 mld km
+https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg
+
+Wenus
+Planeta
+108 mln km
+https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg

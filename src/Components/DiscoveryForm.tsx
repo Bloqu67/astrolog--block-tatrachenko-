@@ -30,7 +30,7 @@ export default function DiscoveryForm({ onAddObject }: Props) {
             image,
         };
 
-        // 🔥 WYSYŁAMY DO RODZICA
+        // WYSYŁAMY DO RODZICA
         onAddObject(newObject);
 
         // reset
