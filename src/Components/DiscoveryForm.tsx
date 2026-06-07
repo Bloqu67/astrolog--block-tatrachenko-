@@ -3,7 +3,7 @@ import type { SpaceObject } from "../Types";
 
 
 type Props = {
-    onAddObject: (obj: SpaceObject) => void;
+    onAddObject: (obj: SpaceObject) => void;  //funkc pzekazana od rodzica
 };
 
 
@@ -12,17 +12,12 @@ export default function DiscoveryForm({ onAddObject }: Props) {
     const [type, setType] = useState("");
     const [distance, setDistance] = useState("");
     const [image, setImage] = useState("");
-    const disabled = name.trim()==="" || type.trim()==="" || distance.trim()==="" || image.trim()==="";
+    const disabled = name.trim()==="" || type.trim()==="" || distance.trim()==="" || image.trim()==="";  //zablokowany przycisk jak puste pole
 
     function handleSubmit(e: React.FormEvent) {
-        e.preventDefault();
+        e.preventDefault();  //zatrzymuje przeladowanie strony
 
-        if (image.trim() === "") {
-            alert("URL nie może być pusty!");
-            return;
-        }
-
-        const newObject: SpaceObject = {
+        const newObject: SpaceObject = {  //tworzy obj
             id: Date.now(),
             name,
             type,
@@ -30,10 +25,9 @@ export default function DiscoveryForm({ onAddObject }: Props) {
             image,
         };
 
-        // WYSYŁAMY DO RODZICA
-        onAddObject(newObject);
+        onAddObject(newObject);  //wywolanie funk rodzica
 
-        // reset
+        // reset formularza
         setName("");
         setType("");
         setDistance("");

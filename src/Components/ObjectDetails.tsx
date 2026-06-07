@@ -1,11 +1,11 @@
 import type { SpaceObject } from "../Types";
 
 type Props = {
-    object: SpaceObject | null;
+    object: SpaceObject | null;  //lub
 };
 
-export default function ObjectDetails({ object }: Props) {
-    if (!object) {
+export default function ObjectDetails({ object }: Props) {  //komponent wyświetla
+    if (!object) {  //jak nie wybrano nic
         return (
             <div className="details">
                 <h2>🌠 Wybierz obiekt</h2>

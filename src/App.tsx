@@ -7,7 +7,8 @@ import DiscoveryForm from "./Components/DiscoveryForm";
 
 import "./App.css";
 
-const initialObjects: SpaceObject[] = [
+
+const initialObjects: SpaceObject[] = [  //lista
     {
         id: 1,
         name: "Mars",
@@ -45,12 +46,12 @@ const initialObjects: SpaceObject[] = [
     },
 ];
 
-function App() {
+function App() {  //glw component
     const [objects, setObjects] = useState<SpaceObject[]>(initialObjects);
     const [selectedObject, setSelectedObject] = useState<SpaceObject | null>(null);
 
-    function addObject(newObject: SpaceObject) {
-        setObjects((prev) => [...prev, newObject]);
+    function addObject(newObject: SpaceObject) {  //funkcja + new object do listy
+        setObjects((prev) => [...prev, newObject]);  //aktualizacja
     }
 
     return (
