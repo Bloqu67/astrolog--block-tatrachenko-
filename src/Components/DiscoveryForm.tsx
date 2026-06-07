@@ -17,6 +17,10 @@ export default function DiscoveryForm({ onAddObject }: Props) {
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
 
+        if (image.trim() === "") {
+            alert("URL nie może być pusty!");
+            return;
+        }
 
         const newObject: SpaceObject = {
             id: Date.now(),

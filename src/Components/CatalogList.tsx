@@ -10,7 +10,7 @@ export default function CatalogList({ objects, onSelect }: Props) {
         <div className="catalog">
             <h2>🌌 Katalog obiektów</h2>
 
-            {objects.map((obj) => (
+            {objects.map((obj) =>  (
                 <div
                     key={obj.id}
                     className="catalog-item"
