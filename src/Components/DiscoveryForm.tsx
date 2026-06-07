@@ -17,7 +17,6 @@ export default function DiscoveryForm({ onAddObject }: Props) {
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
 
-        if (!name || !type || !distance || !image) return;
 
         const newObject: SpaceObject = {
             id: Date.now(),
@@ -42,24 +41,25 @@ export default function DiscoveryForm({ onAddObject }: Props) {
             <h2>Dodaj obiekt kosmiczny</h2>
 
             <input
+                aria-label="Nazwa obiektu"
                 placeholder="Nazwa"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
-
             <input
+                aria-label="Typ obiektu"
                 placeholder="Typ"
                 value={type}
                 onChange={(e) => setType(e.target.value)}
             />
-
             <input
+                aria-label="Odległość od Ziemi"
                 placeholder="Odległość"
                 value={distance}
                 onChange={(e) => setDistance(e.target.value)}
             />
-
             <input
+                aria-label="URL zdjęcia"
                 placeholder="URL zdjęcia"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
