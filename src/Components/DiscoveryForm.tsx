@@ -1,15 +1,18 @@
 import { useState } from "react";
 import type { SpaceObject } from "../Types";
 
+
 type Props = {
     onAddObject: (obj: SpaceObject) => void;
 };
+
 
 export default function DiscoveryForm({ onAddObject }: Props) {
     const [name, setName] = useState("");
     const [type, setType] = useState("");
     const [distance, setDistance] = useState("");
     const [image, setImage] = useState("");
+    const disabled = name.trim()==="" || type.trim()==="" || distance.trim()==="" || image.trim()==="";
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -62,7 +65,7 @@ export default function DiscoveryForm({ onAddObject }: Props) {
                 onChange={(e) => setImage(e.target.value)}
             />
 
-            <button type="submit">Dodaj</button>
+            <button disabled={disabled} style={{backgroundColor:disabled?'#555':'#4a90e2'}}type="submit">Dodaj </button>
         </form>
     );
 }
