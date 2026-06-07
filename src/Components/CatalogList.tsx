@@ -8,7 +8,7 @@ type Props = {
 export default function CatalogList({ objects, onSelect }: Props) {
     return (
         <div className="catalog">
-            <h2>🌌 Catalog obiektów</h2>
+            <h2>🌌 Katalog obiektów</h2>
 
             {objects.map((obj) => (
                 <div
