@@ -27,21 +27,21 @@ const initialObjects: SpaceObject[] = [
         name: "Syriusz",
         type: "Gwiazda",
         distance: "8,6 lat świetlnych",
-        image: "https://upload.wikimedia.org/wikipedia/commons/5/56/Sirius_A_and_B_Hubble_photo.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Close-up_of_Sirius.jpg/960px-Close-up_of_Sirius.jpg",
     },
     {
         id: 4,
         name: "Andromeda",
         type: "Galaktyka",
         distance: "2,5 mln lat świetlnych",
-        image: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Andromeda_Galaxy_%28with_h-alpha%29.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg",
     },
     {
         id: 5,
         name: "Betelgeza",
         type: "Gwiazda",
         distance: "642 lata świetlne",
-        image: "https://upload.wikimedia.org/wikipedia/commons/7/77/Artist%27s_impression_of_the_red_supergiant_star_Betelgeuse.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Digitized_Sky_Survey_Image_of_Betelgeuse.jpg/500px-Digitized_Sky_Survey_Image_of_Betelgeuse.jpg",
     },
 ];
 
