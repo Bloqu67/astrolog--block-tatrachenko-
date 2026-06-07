@@ -1,9 +1,9 @@
 import { useState } from "react";
 import type { SpaceObject } from "../Types";
-
+import * as React from "react";
 
 type Props = {
-    onAddObject: (obj: SpaceObject) => void;  //funkc pzekazana od rodzica
+    onAddObject: (obj: SpaceObject) => void;
 };
 
 
@@ -12,12 +12,13 @@ export default function DiscoveryForm({ onAddObject }: Props) {
     const [type, setType] = useState("");
     const [distance, setDistance] = useState("");
     const [image, setImage] = useState("");
-    const disabled = name.trim()==="" || type.trim()==="" || distance.trim()==="" || image.trim()==="";  //zablokowany przycisk jak puste pole
+    const disabled = name.trim()==="" || type.trim()==="" || distance.trim()==="" || image.trim()==="";
 
     function handleSubmit(e: React.FormEvent) {
-        e.preventDefault();  //zatrzymuje przeladowanie strony
+        e.preventDefault();
 
-        const newObject: SpaceObject = {  //tworzy obj
+
+        const newObject: SpaceObject = {
             id: Date.now(),
             name,
             type,
@@ -25,9 +26,10 @@ export default function DiscoveryForm({ onAddObject }: Props) {
             image,
         };
 
-        onAddObject(newObject);  //wywolanie funk rodzica
+        // WYSYŁAMY DO RODZICA
+        onAddObject(newObject);
 
-        // reset formularza
+        // reset
         setName("");
         setType("");
         setDistance("");
